@@ -26,6 +26,7 @@ module.exports = {
 		},
 	},
 	variants: {
+		scrollbar: ['rounded'],
 		extend: {
 			transitionTimingFunction: ['hover', 'focus'],
 			transitionDuration: ['hover', 'focus'],
@@ -37,5 +38,5 @@ module.exports = {
 			transitionProperty: ['hover', 'focus'],
 		},
 	},
-	plugins: [],
+	plugins: [require('tailwind-scrollbar')],
 }
