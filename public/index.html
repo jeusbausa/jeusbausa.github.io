@@ -20,7 +20,7 @@
 	<body class="bg-mainBg scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-gray-700 scrollbar-track-mainBg scrollbar-thumb-rounded-full text-white">
 		<div class="flex xl:flex-row xss:flex-col">
 			<div class="hero fixed px-12 py-4 xl:block z-0 xss:hidden">
-				<img src="./images/portfolio/logo.png" class="w-12 z-0 " />
+				<img src="./images/portfolio/logo.png" class="w-12 z-0" />
 			</div>
 			<div class="xl:flex xl:items-center xl:h-screen xl:sticky xl:top-0 xs:relative md:px-12 xss:px-6 xl:pt-0 xss:py-24 xl:w-2/4 xss:w-full">
 				<div class="text-white xl:mt-36 xss:mt-0 font-openSans">
@@ -104,13 +104,36 @@
 				</div>
 			</div>
 
-			<div   id="modalTechStack" class="hidden fixed w-full h-full   items-center justify-center z-50">
+			<div id="modalTechStack" class="hidden fixed w-full h-full items-center justify-center z-50">
 				<div class="absolute w-full h-full bg-gray-900 opacity-50"></div>
-				<div class="bg-bgCard rounded-lg px-3 py-4 z-50 opacity-100 w-96 h-4/6 scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-gray-700 scrollbar-track-bgCard scrollbar-thumb-rounded-full overflow-y-scroll">
+				<div
+					class="
+						bg-bgCard
+						rounded-lg
+						px-3
+						py-4
+						z-50
+						opacity-100
+						w-96
+						h-4/6
+						scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-gray-700 scrollbar-track-bgCard scrollbar-thumb-rounded-full
+						overflow-y-scroll
+					"
+				>
 					<div class="flex flex-row justify-between">
 						<div class="font-openSans mb-4 font-bold text-lg">Full Tech Stack</div>
-						<div onclick="modalToggle()" class="cursor-pointer ">
-							<svg class="hover:bg-gray-800 " width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g data-name="Layer 2"><g data-name="close"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/><path style="fill: #9dedf8" d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"/></g></g></svgc>
+						<div onclick="modalToggle()" class="cursor-pointer">
+							<svg class="hover:bg-gray-800" width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+								<g data-name="Layer 2">
+									<g data-name="close">
+										<rect width="24" height="24" transform="rotate(180 12 12)" opacity="0" />
+										<path
+											style="fill: #9dedf8"
+											d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
+										/>
+									</g>
+								</g>
+							</svg>
 						</div>
 					</div>
 
@@ -529,8 +552,8 @@ q8 -8 20 -13v-220q-12 -4 -20 -13q-14 -13 -17.5 -31.5t3.5 -35.5l-90 -91l-240 240q
 							</div>
 						</div>
 						<div class="font-poppins font-light text-xs">
-							<div onclick="modalToggle()"  class="mr-1 cursor-pointer inline-flex items-center"
-								>See my full tech stack
+							<div onclick="modalToggle()" class="mr-1 cursor-pointer inline-flex items-center">
+								See my full tech stack
 								<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 30 30" style="fill: #9dedf8">
 									<path
 										d="M 25.980469 2.9902344 A 1.0001 1.0001 0 0 0 25.869141 3 L 20 3 A 1.0001 1.0001 0 1 0 20 5 L 23.585938 5 L 13.292969 15.292969 A 1.0001 1.0001 0 1 0 14.707031 16.707031 L 25 6.4140625 L 25 10 A 1.0001 1.0001 0 1 0 27 10 L 27 4.1269531 A 1.0001 1.0001 0 0 0 25.980469 2.9902344 z M 6 7 C 4.9069372 7 4 7.9069372 4 9 L 4 24 C 4 25.093063 4.9069372 26 6 26 L 21 26 C 22.093063 26 23 25.093063 23 24 L 23 14 L 23 11.421875 L 21 13.421875 L 21 16 L 21 24 L 6 24 L 6 9 L 14 9 L 16 9 L 16.578125 9 L 18.578125 7 L 16 7 L 14 7 L 6 7 z"
@@ -731,12 +754,13 @@ q8 -8 20 -13v-220q-12 -4 -20 -13q-14 -13 -17.5 -31.5t3.5 -35.5l-90 -91l-240 240q
 							<div class="flex md:flex-row xss:flex-col-reverse bg-bgCard rounded-lg md:h-56 w-full items-center">
 								<div class="flex-1 flex items-center p-3 justify-center h-full">
 									<div class="flex flex-col space-y-2 text-center">
-										<h3 class="font-poppins font-bold text-4xl"><span class="text-base">#1.</span> GMIMS V2</h3>
+										<h3 class="font-poppins font-bold text-3xl"><span class="text-base">#1.</span> GMIMS V2</h3>
 										<small class="text-xs font-openSans">(Goodlife Microlending Information Management System)</small>
 										<hr class="mx-2" />
-										<p class="font-poppins font-light text-pBg text-sm max-w-4xl">
+										<p class="font-poppins font-light text-pBg text-xs max-w-4xl">
 											Improved and currently used information system of Goodlife INC. using express.js, vue.js, vuetify with jwt authentication and sequelize ORM.
 										</p>
+										<div class="p-1 text-xs text-white bg-gray-700">(test account) username : user | password : password</div>
 										<div class="flex pb-3 items-center justify-center transform hover:scale-110 duration-200 ease-in-out">
 											<a class="font-poppins text-primaryBg border-primaryBg border-2 px-3 py-2 text-xs" target="_blank" href="https://jbwebapps.ga/gmims-new/">View App</a>
 										</div>
@@ -769,12 +793,13 @@ q8 -8 20 -13v-220q-12 -4 -20 -13q-14 -13 -17.5 -31.5t3.5 -35.5l-90 -91l-240 240q
 								</div>
 								<div class="flex-1 flex items-center p-3 justify-center h-full">
 									<div class="flex flex-col space-y-2 text-center">
-										<h3 class="font-poppins font-bold text-4xl"><span class="text-base">#2.</span> GMIMS V1</h3>
+										<h3 class="font-poppins font-bold text-3xl"><span class="text-base">#2.</span> GMIMS V1</h3>
 										<small class="text-xs font-openSans">(Goodlife Microlending Information Management System)</small>
 										<hr class="mx-2" />
-										<p class="font-poppins font-light text-pBg text-sm max-w-4xl">
+										<p class="font-poppins font-light text-pBg text-xs max-w-4xl">
 											A loan management information system legacy made in PHP, jQuery, Bootstrap 3 and phpspreadsheet library for exporting xlsx
 										</p>
+										<div class="p-1 text-xs text-white bg-gray-700">(test account) username : admin | password : admin</div>
 										<div class="flex pb-3 items-center justify-center transform hover:scale-110 duration-200 ease-in-out">
 											<a class="font-poppins text-primaryBg border-primaryBg border-2 px-3 py-2 text-xs" target="_blank" href="https://jbwebapps.ga/gmims-old/">View App</a>
 										</div>
@@ -787,12 +812,13 @@ q8 -8 20 -13v-220q-12 -4 -20 -13q-14 -13 -17.5 -31.5t3.5 -35.5l-90 -91l-240 240q
 							<div class="flex md:flex-row xss:flex-col-reverse bg-bgCard rounded-lg md:h-56 w-full items-center">
 								<div class="flex-1 flex items-center p-3 justify-center h-full">
 									<div class="flex flex-col space-y-2 text-center">
-										<h3 class="font-poppins font-bold text-4xl"><span class="text-base">#3.</span> HRIS</h3>
+										<h3 class="font-poppins font-bold text-3xl"><span class="text-base">#3.</span> HRIS</h3>
 										<small class="font-openSans">(Human Resource Information System)</small>
 										<hr class="mx-2" />
-										<p class="font-poppins font-light text-pBg text-sm max-w-4xl">
+										<p class="font-poppins font-light text-pBg text-xs max-w-4xl">
 											A human resource web application for employee's personal information including payroll, made in CodeIgniter, MySQL and phpspreadhsheet library
 										</p>
+										<div class="p-1 text-xs text-white bg-gray-700">(test account) username : admin | password : admin</div>
 										<div class="flex pb-3 items-center justify-center transform hover:scale-110 duration-200 ease-in-out">
 											<a class="font-poppins text-primaryBg border-primaryBg border-2 px-3 py-2 text-xs" target="_blank" href="https://jbwebapps.ga/hris/">View App</a>
 										</div>
