@@ -1,4 +1,4 @@
-let toggleActive = 'border-secondaryBg bg-white bg-opacity-10'
+let toggleActive = 'border-secondaryBg bg-white bg-opacity-10 border-primaryBg border-opacity-100'
 const slideUp = {
 	distance: '3%',
 	origin: 'bottom',
@@ -114,17 +114,31 @@ document.getElementById('contact-mobile').addEventListener('click', () => {
 function workOne() {
 	document.querySelector('#work-gl').classList.remove('hidden')
 	document.querySelector('#work-lgu').classList.add('hidden')
+	document.querySelector('#work-btph').classList.add('hidden')
 	document.querySelector('#gl').classList.add(...toggleActive.split(' '))
 	document.querySelector('#lgu').classList.remove(...toggleActive.split(' '))
+	document.querySelector('#btph').classList.remove(...toggleActive.split(' '))
 	ScrollReveal().reveal('#work-gl', slideDown2)
 }
 
 function workTwo() {
 	document.querySelector('#work-gl').classList.add('hidden')
+	document.querySelector('#work-btph').classList.add('hidden')
 	document.querySelector('#work-lgu').classList.remove('hidden')
-	document.querySelector('#gl').classList.remove(...toggleActive.split(' '))
 	document.querySelector('#lgu').classList.add(...toggleActive.split(' '))
+	document.querySelector('#gl').classList.remove(...toggleActive.split(' '))
+	document.querySelector('#btph').classList.remove(...toggleActive.split(' '))
 	ScrollReveal().reveal('#work-lgu', slideDown2)
+}
+
+function workThree() {
+	document.querySelector('#work-gl').classList.add('hidden')
+	document.querySelector('#work-lgu').classList.add('hidden')
+	document.querySelector('#work-btph').classList.remove('hidden')
+	document.querySelector('#gl').classList.remove(...toggleActive.split(' '))
+	document.querySelector('#lgu').classList.remove(...toggleActive.split(' '))
+	document.querySelector('#btph').classList.add(...toggleActive.split(' '))
+	ScrollReveal().reveal('#work-btph', slideDown2)
 }
 
 ;(() => {
@@ -155,7 +169,7 @@ function workTwo() {
 		false
 	)
 
-	document.querySelector('#gl').classList.add(...toggleActive.split(' '))
+	document.querySelector('#btph').classList.add(...toggleActive.split(' '))
 	ScrollReveal().reveal('.navbar', slideDown)
 	ScrollReveal().reveal('.hero', { ...slideUp, interval: 100 })
 	ScrollReveal().reveal('.section', { ...slideUp, viewFactor: 0.2 })
