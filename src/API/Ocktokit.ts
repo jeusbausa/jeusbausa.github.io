@@ -2,7 +2,7 @@
 import { Octokit } from "@octokit/rest";
 
 const octokit = new Octokit({
-    auth: "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",
+    auth: "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",
 });
 
 export const getRepos = async (options: any): Promise<Array<any>> => {
