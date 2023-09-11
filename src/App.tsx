@@ -38,11 +38,12 @@ function App() {
         <div className="bg-mainBg scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-gray-700 scrollbar-track-mainBg scrollbar-thumb-rounded-full text-white">
             <Suspense
                 fallback={
-                    <div className="flex fixed w-full h-full items-center justify-center z-50  bg-black opacity-50">
-                        <div
-                            className=" h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                            role="status"
-                        ></div>
+                    <div className="flex items-center justify-center min-h-screen p-5 bg-black min-w-screen">
+                        <div className="flex space-x-2 animate-pulse">
+                            <div className="w-3 h-3 bg-white rounded-full"></div>
+                            <div className="w-3 h-3 bg-white rounded-full"></div>
+                            <div className="w-3 h-3 bg-white rounded-full"></div>
+                        </div>
                     </div>
                 }
             >
