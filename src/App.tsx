@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Paragraph from "@components/Loaders/Paragraph";
 import _ from "lodash";
 import { Suspense, lazy, useRef, useState } from "react";
 
@@ -37,7 +36,16 @@ function App() {
 
     return (
         <div className="bg-mainBg scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-gray-700 scrollbar-track-mainBg scrollbar-thumb-rounded-full text-white">
-            <Suspense fallback={<Paragraph rows={6} />}>
+            <Suspense
+                fallback={
+                    <div className="flex fixed w-full h-full items-center justify-center z-50  bg-black opacity-50">
+                        <div
+                            className=" h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                            role="status"
+                        ></div>
+                    </div>
+                }
+            >
                 <Header handleOnClick={(value) => handleScroll(value)}>
                     <TechStacks isOpen={showTechStack} onClose={(value) => setShowTechStacks(value)} />
                     <SidePanel />
