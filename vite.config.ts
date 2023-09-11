@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import tsconfigPaths from "vite-tsconfig-paths";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
     build: {
-        outDir: "./public"
+        outDir: "./public",
     },
     plugins: [
         react(),
@@ -14,7 +14,11 @@ export default defineConfig({
             targets: [
                 {
                     src: "./src/assets/images",
-                    dest: "./"
+                    dest: "./",
+                },
+                {
+                    src: "./src/assets/favicon.ico",
+                    dest: "./",
                 },
             ],
         }),
