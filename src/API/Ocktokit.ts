@@ -2,7 +2,7 @@
 
 export const getRepos = async (options: any): Promise<Array<any>> => {
     try {
-        const data = await fetch("https://expressjs-production-3ee4.up.railway.app/repos?" + new URLSearchParams(options));
+        const data = await fetch("https://octokit-repos-jeusbausa.up.railway.app/repos?" + new URLSearchParams(options));
         const res = await data.json();
         return res;
     } catch (error) {
