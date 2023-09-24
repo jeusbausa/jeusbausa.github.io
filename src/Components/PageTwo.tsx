@@ -10,9 +10,6 @@ const PageTwo: React.FC<{ ref: Ref<HTMLDivElement> }> = React.forwardRef((_props
         <div ref={ref}>
             <Slide direction="up" triggerOnce cascade>
                 <div className="font-poppins font-bold text-5xl mb-10">Places I've worked?</div>
-                <p className="font-poppins font-light text-pBg max-w-4xl mb-10 leading-6">
-                    Since 2018, I had the privilege to work with a these companies that enabled me to show off my skills and talents.
-                </p>
             </Slide>
             <div className="flex md:flex-row xss:flex-col xl:max-w-6xl md:max-w-full mx-auto space-x-2 mb-40">
                 <Fade>

@@ -2,15 +2,6 @@ import React from "react";
 import { Reveal, Slide } from "react-awesome-reveal";
 
 const SidePanel: React.FC = (): JSX.Element => {
-    // const [techStacks, setTechStacks] = useState<Array<{ name: string; strength: number }>>([]);
-
-    // useEffect(() => {
-    //     fetch("https://645afb9065bd868e9327fc69.mockapi.io/techstacks").then(async (res) => {
-    //         const data = await res.json();
-    //         setTechStacks(data);
-    //     });
-    // }, []);
-
     return (
         <div className="xl:flex xl:items-center xl:h-screen xl:sticky xl:top-0 xs:relative md:px-12 xss:px-6 xl:pt-0 xss:py-24 xl:w-2/4 xss:w-full">
             <div className="text-white xl:mt-36 xss:mt-0 font-openSans">
@@ -37,7 +28,7 @@ const SidePanel: React.FC = (): JSX.Element => {
                                     />
                                 </svg>
                             </a>
-                            <a target="_blank" href="https://instagram.com/_jebausa">
+                            <a target="_blank" href="https://instagram.com/je.bausa">
                                 <svg className="transform duration-200 hover:scale-110" width="34" height="34" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         fill="#A1AEC1"
@@ -64,31 +55,6 @@ const SidePanel: React.FC = (): JSX.Element => {
 			C504,57,447.2,0.2,377.6,0.2z M168,408.2H96v-208h72V408.2z M131.6,168.2c-20.4,0-36.8-16.4-36.8-36.8c0-20.4,16.4-36.8,36.8-36.8
 			c20.4,0,36.8,16.4,36.8,36.8C168,151.8,151.6,168.2,131.6,168.2z M408.4,408.2H408h-60V307.4c0-24.4-3.2-55.6-36.4-55.6
 			c-34,0-39.6,26.4-39.6,54v102.4h-60v-208h56v28h1.6c8.8-16,29.2-28.4,61.2-28.4c66,0,77.6,38,77.6,94.4V408.2z"
-                                    />
-                                </svg>
-                            </a>
-                            <a target="_blank" href="https://www.youtube.com/channel/UCgxJ1f5Up44nVi5hdQRCDBA">
-                                <svg
-                                    className="transform duration-200 hover:scale-110"
-                                    version="1.1"
-                                    id="Layer_1"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                                    width="34"
-                                    height="34"
-                                    viewBox="0 0 310 310"
-                                    style={{ background: "new 0 0 310 310" }}
-                                    xmlSpace="preserve"
-                                >
-                                    <path
-                                        fill="#A1AEC1"
-                                        id="XMLID_823_"
-                                        d="M297.917,64.645c-11.19-13.302-31.85-18.728-71.306-18.728H83.386c-40.359,0-61.369,5.776-72.517,19.938
-		C0,79.663,0,100.008,0,128.166v53.669c0,54.551,12.896,82.248,83.386,82.248h143.226c34.216,0,53.176-4.788,65.442-16.527
-		C304.633,235.518,310,215.863,310,181.835v-53.669C310,98.471,309.159,78.006,297.917,64.645z M199.021,162.41l-65.038,33.991
-		c-1.454,0.76-3.044,1.137-4.632,1.137c-1.798,0-3.592-0.484-5.181-1.446c-2.992-1.813-4.819-5.056-4.819-8.554v-67.764
-		c0-3.492,1.822-6.732,4.808-8.546c2.987-1.814,6.702-1.938,9.801-0.328l65.038,33.772c3.309,1.718,5.387,5.134,5.392,8.861
-		C204.394,157.263,202.325,160.684,199.021,162.41z"
                                     />
                                 </svg>
                             </a>

@@ -9,7 +9,7 @@
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
         "build-css": "npx tailwindcss -i ./src/assets/css/style.css -o ./public/css/style.css",
-        "deploy": "git subtree push --prefix public origin gh-pages"
+        "deploy": "tsc && vite build && git subtree push --prefix public origin gh-pages"
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
