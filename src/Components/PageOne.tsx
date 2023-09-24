@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { Ref } from "react";
 import Avatar from "./Avatar";
 import { Fade, Reveal, Slide } from "react-awesome-reveal";
