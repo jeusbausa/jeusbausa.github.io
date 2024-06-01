@@ -2,17 +2,17 @@ import classNames from "classnames";
 import React, { ReactNode, useState } from "react";
 import { Fade, Slide } from "react-awesome-reveal";
 
-const Header: React.FC<{ children: ReactNode; handleOnClick: (value: string) => void }> = ({ children, handleOnClick }): JSX.Element => {
+const Header: React.FC<{ children: ReactNode; handleOnClick: (value: string) => void; }> = ({ children, handleOnClick }): JSX.Element => {
     const [hamburgerMode, setHamburgerMode] = useState<boolean>(false);
 
     return (
         <div className="flex xl:flex-row xss:flex-col">
-            <Fade delay={2000}>
-                <div className="hero fixed px-12 py-4 xl:block z-0 xss:hidden">
-                    <img src="/images/logo.png" className="w-12 z-0" />
-                </div>
-            </Fade>
-            <nav className="navbar z-30 fixed w-8/12 opacity-90 right-12 bg-mainBg top-0 h-16 p-6 xl:block xss:hidden">
+            <nav className="navbar z-30 fixed w-full opacity-90 right-12 bg-mainBg top-0 h-16 p-6 xl:block xss:hidden">
+                <Fade delay={2000}>
+                    <div className="hero fixed top-0 left-0 px-12 py-4 xl:block z-0 xss:hidden">
+                        <img src="/images/logo.png" className="w-9 z-0" />
+                    </div>
+                </Fade>
                 <Fade delay={2000}>
                     <Slide direction="down" delay={1500} cascade>
                         <ul className="top-menu flex flex-row justify-end space-x-5 text-xs font-poppins">
@@ -62,7 +62,7 @@ const Header: React.FC<{ children: ReactNode; handleOnClick: (value: string) => 
                             className={classNames("block w-6 h-0.5 bg-secondaryBg transform transition duration-300 ease-in-out", { "rotate-45 translate-y-1.5": hamburgerMode })}
                         ></span>
                         <span
-                            className={classNames("block opacity-100 w-6 h-0.5 bg-secondaryBg transform transition duration-200 ease-in-out", {
+                            className={classNames("block xl:opacity-100 w-6 h-0.5 bg-secondaryBg transform transition duration-200 ease-in-out", {
                                 "opacity-0": hamburgerMode,
                             })}
                         ></span>

@@ -1,7 +1,7 @@
 import React, { Ref } from "react";
 import { Slide } from "react-awesome-reveal";
 
-const PageFour: React.FC<{ ref: Ref<HTMLDivElement> }> = React.forwardRef((_props, ref: Ref<HTMLDivElement>): JSX.Element => {
+const PageFour: React.FC<{ ref: Ref<HTMLDivElement>; }> = React.forwardRef((_props, ref: Ref<HTMLDivElement>): JSX.Element => {
     return (
         <div ref={ref}>
             <Slide direction="up" duration={1000} cascade>

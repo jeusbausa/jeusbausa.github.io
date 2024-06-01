@@ -36,7 +36,7 @@ const SidePanel: React.FC = (): JSX.Element => {
                                     />
                                 </svg>
                             </a>
-                            <a target="_blank" href="https://www.linkedin.com/in/jeus-bausa-39a053207/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B3QHbIJBZS8mUUd11I66Uew%3D%3D">
+                            <a target="_blank" href="https://www.linkedin.com/in/jeusbausa/">
                                 <svg
                                     className="transform duration-200 hover:scale-110"
                                     version="1.1"

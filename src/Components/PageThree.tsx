@@ -8,7 +8,7 @@ import classNames from "classnames";
 import Paragraph from "./Loaders/Paragraph";
 import _ from "lodash";
 
-const PageThree: React.FC<{ ref: Ref<HTMLDivElement> }> = React.forwardRef((_props, ref): JSX.Element => {
+const PageThree: React.FC<{ ref: Ref<HTMLDivElement>; }> = React.forwardRef((_props, ref): JSX.Element => {
     const [repos, setRepos] = useState<Array<any>>([]);
     const [filter, setFilter] = useState<{
         page: number;
@@ -38,7 +38,7 @@ const PageThree: React.FC<{ ref: Ref<HTMLDivElement> }> = React.forwardRef((_pro
 
     return (
         <div ref={ref} className="xl:max-w-4xl xss:max-w-full xss:flex-col text-white pb-32">
-            <div className="font-poppins app font-bold text-5xl mb-10">Some of my github repositories.</div>
+            <div className="font-poppins app font-bold text-5xl mb-10">Some of my project contributions.</div>
             <div className="space-y-2">
                 {loading ? (
                     <Paragraph rows={5} />
@@ -46,7 +46,7 @@ const PageThree: React.FC<{ ref: Ref<HTMLDivElement> }> = React.forwardRef((_pro
                     repos.map((repo, i) => (
                         <Fade key={i}>
                             <Slide duration={500} direction="right" cascade>
-                                <div className="bg-bgCard md:max-w-2xl p-2 rounded-lg">
+                                <div className="bg-bgCard hover:scale-105 transition ease-in-out md:max-w-2xl p-2 rounded-lg">
                                     <div className="flex space-x-2">
                                         <img className="w-5 h-5 rounded-full" src={repo.owner.avatar_url} alt={repo.owner.avatar_ur} />
                                         <div className="flex justify-evenly items-center text-md mb-2 font-bold">

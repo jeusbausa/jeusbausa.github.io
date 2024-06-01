@@ -1,10 +1,16 @@
 import { ReactNode } from "react";
+import classNames from "classnames";
+import useScrollPosition from "../hooks/useScrollPosition";
 
-const Content: React.FC<{ children: ReactNode }> = ({ children }): JSX.Element => {
+const Content: React.FC<{ children: ReactNode; }> = ({ children }): JSX.Element => {
+    const scroll = useScrollPosition();
+
     return (
         <main className="xl:w-5/6 lg:w-screen pb-32 xs:mx-auto md:px-12 xss:px-6 z-0 xss:space-y-24 ">
             {children}
-            <div className="fixed right-0 bottom-0 z-40 m-6 space-y-2 xl:block transition delay-200 ease-in-out xss:hidden animate-bounce">
+            <div className={classNames("fixed right-0 bottom-0 z-40 m-6 space-y-2 transition delay-200 ease-in-out xss:hidden animate-bounce", {
+                "xl:block": scroll > 0
+            })}>
                 <svg
                     className="mx-auto"
                     width="15px"

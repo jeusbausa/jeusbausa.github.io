@@ -35,7 +35,7 @@ function App() {
     };
 
     return (
-        <div className="bg-mainBg scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-gray-700 scrollbar-track-mainBg scrollbar-thumb-rounded-full text-white">
+        <div className="bg-mainBg overflow-y-scroll scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-gray-700 scrollbar-track-mainBg scrollbar-thumb-rounded-full text-white">
             <Suspense
                 fallback={
                     <div className="flex items-center justify-center min-h-screen p-5 bg-black min-w-screen">
