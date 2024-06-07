@@ -1,4 +1,4 @@
-import{j as _,R as Wt,_ as Ft,r as _e}from"./index-3ae255ac.js";import{F as Os,S as bs}from"./index-c97c6c40.js";import{c as Ot}from"./index-6d66e5f3.js";const Ts=async e=>{try{return await(await fetch("https://octokit-repos-jeusbausa.up.railway.app/repos?"+new URLSearchParams(e))).json()}catch(t){throw console.error("unable to load github octokit"),t}};//! moment.js
+import{j as _,R as Wt,_ as Ft,r as _e}from"./index-5d098f25.js";import{F as Os,S as bs}from"./index-4c12e4d4.js";import{c as Ot}from"./index-7af9b4ba.js";const Ts=async e=>{try{return await(await fetch("https://octokit-repos-jeusbausa.up.railway.app/repos?"+new URLSearchParams(e))).json()}catch(t){throw console.error("unable to load github octokit"),t}};//! moment.js
 //! version : 2.29.4
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
