@@ -28,7 +28,7 @@ const SidePanel: React.FC = (): JSX.Element => {
                                     />
                                 </svg>
                             </a>
-                            <a target="_blank" href="https://instagram.com/je.bausa">
+                            <a target="_blank" href="https://instagram.com/surjheee">
                                 <svg className="transform duration-200 hover:scale-110" width="34" height="34" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         fill="#A1AEC1"

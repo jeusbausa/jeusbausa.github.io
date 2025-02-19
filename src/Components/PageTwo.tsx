@@ -59,7 +59,7 @@ const PageTwo: React.FC<{ ref: Ref<HTMLDivElement>; }> = React.forwardRef((_prop
                         <Fade duration={500} direction="up">
                             <div className="font-poppins text-secondaryBg text-xl font-bold mb-4">Software Engineer</div>
                             <div className="font-poppins text-xl font-bold">Business Tree PH</div>
-                            <div className="font-poppins text-sm text-pBg focus-normal mb-6">Jan 24, 2022 - Present</div>
+                            <div className="font-poppins text-sm text-pBg focus-normal mb-6">Jan 24, 2022 - Feb 07, 2025</div>
                             <div className="flex flex-col space-y-1">
                                 <Slide fraction={1} duration={500} direction="up" triggerOnce cascade>
                                     <div className="flex flex-row space-x-2 items-start">

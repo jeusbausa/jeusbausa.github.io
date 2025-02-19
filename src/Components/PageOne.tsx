@@ -16,7 +16,7 @@ const PageOne: React.FC<{ onShowTechStack: (value: boolean) => void; ref: Ref<HT
 
                     <div className="font-poppins font-semibold text-xl mb-6">
                         These are a the technologies
-                        <span className="text-secondaryBg"> i currently used </span>
+                        <span className="text-secondaryBg"> i currently use </span>
                     </div>
                 </Reveal>
                 <div className="md:flex md:flex-row xss:grid xss:grid-cols-3 md:space-x-6 mb-12">
