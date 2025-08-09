@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --bg: 255 255 255; --fg: 17 24 39; --muted: 100 116 139; }
+.dark { --bg: 10 10 11; --fg: 226 232 240; --muted: 148 163 184; }
+
+html,body{height:100%}
+body{
+  background: rgb(var(--bg));
+  color: rgb(var(--fg));
+  font-family: theme('fontFamily.body');
+  min-height: 100%;
+}
+
+.container-max{ @apply max-w-6xl mx-auto px-4 md:px-6; }
+.card{ @apply rounded-2xl border border-slate-200/50 dark:border-slate-800/80 bg-white/60 dark:bg-slate-900/50 backdrop-blur shadow-soft; }
+.btn{ @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium ring-1 ring-slate-900/5 dark:ring-white/10 hover:opacity-90 transition; }
+.btn-primary{ @apply bg-brand-600 text-white hover:bg-brand-700; }
+.link{ @apply underline underline-offset-4 text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300; }
+
+.reveal { opacity: 1; transform: none; }
+
+.js .reveal { opacity: 0; transform: translateY(16px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; }
+}

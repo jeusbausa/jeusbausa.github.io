@@ -1,47 +1,35 @@
 {
-    "name": "portfolio-vite",
+    "name": "je-portfolio-next",
     "private": true,
-    "version": "1.0.0",
-    "type": "module",
+    "version": "6.0.0",
     "scripts": {
-        "dev": "vite",
-        "build": "tsc && vite build",
-        "lint": "eslint . --ext ts,tsx ./src",
-        "lint-fix": "eslint . --ext ts,tsx ./src --fix",
-        "preview": "vite preview",
-        "build-css": "npx tailwindcss -i ./src/assets/css/style.css -o ./public/css/style.css",
-        "deploy": "git subtree push --prefix public origin gh-pages"
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
     },
     "dependencies": {
-        "@emotion/react": "^11.11.1",
-        "@n8tb1t/use-scroll-position": "^2.0.3",
-        "@octokit/rest": "^20.0.1",
-        "@types/lodash": "^4.14.197",
-        "classnames": "^2.3.2",
+        "clsx": "2.1.1",
+        "gsap": "3.12.5",
         "lodash": "^4.17.21",
-        "moment": "^2.29.4",
-        "react": "^18.2.0",
-        "react-awesome-reveal": "^4.2.5",
-        "react-dom": "^18.2.0",
-        "scrollreveal": "^4.0.9",
-        "tailwind-scrollbar": "^3.0.5",
-        "vite-plugin-static-copy": "^0.17.0",
-        "vite-tsconfig-paths": "^4.2.0"
+        "lucide-react": "0.454.0",
+        "next": "15.0.0",
+        "next-themes": "0.3.0",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "tailwindcss-animate": "^1.0.7"
     },
     "devDependencies": {
-        "@tailwindcss/forms": "^0.5.4",
-        "@types/react": "^18.2.15",
-        "@types/react-dom": "^18.2.7",
-        "@typescript-eslint/eslint-plugin": "^6.0.0",
-        "@typescript-eslint/parser": "^6.0.0",
-        "@vitejs/plugin-react-swc": "^3.3.2",
-        "autoprefixer": "^10.4.15",
-        "eslint": "^8.45.0",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-react-refresh": "^0.4.3",
-        "postcss": "^8.4.29",
-        "tailwindcss": "^3.3.3",
-        "typescript": "^5.0.2",
-        "vite": "^4.4.5"
-    }
+        "@types/lodash": "^4.17.20",
+        "@types/node": "20.14.12",
+        "@types/react": "18.3.3",
+        "@types/react-dom": "^19.1.7",
+        "autoprefixer": "10.4.20",
+        "eslint": "9.9.0",
+        "eslint-config-next": "15.0.0",
+        "postcss": "8.4.41",
+        "tailwindcss": "3.4.10",
+        "typescript": "5.5.4"
+    },
+    "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
