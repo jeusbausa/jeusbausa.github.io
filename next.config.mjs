@@ -14,6 +14,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: `${repo}/`,
+  trailingSlash: true,
 };
 export default nextConfig;
