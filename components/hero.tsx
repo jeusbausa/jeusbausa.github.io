@@ -3,7 +3,6 @@ import { hero } from "../lib/data";
 import { Github, Linkedin } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Image from "next/image";
 
 export default function Hero() {
   const scope = useRef<HTMLDivElement>(null);
@@ -91,11 +90,9 @@ export default function Hero() {
         </div>
       </div>
       <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700/50">
-        <Image
+        <img
           src="https://avatars.githubusercontent.com/u/47097646"
           alt="Jeus Bausa"
-          width={224}
-          height={224}
           className="w-full h-full object-cover grayscale"
         />
       </div>
