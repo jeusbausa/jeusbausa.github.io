@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
-const repo =
-  "https://raw.githubusercontent.com/jeusbausa/jeusbausa.github.io/refs/heads/gh-pages";
+
 const nextConfig = {
   reactStrictMode: false,
   images: {
