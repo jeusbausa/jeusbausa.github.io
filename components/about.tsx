@@ -47,7 +47,7 @@ export default function About() {
                 <h4 className="font-semibold">{cat.title}</h4>
                 <div className="flex-1 border-t border-white/10 ml-3" />
               </div>
-              <ul className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-3">
+              <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3">
                 {cat.items.map((it) => (
                   <li
                     key={it}

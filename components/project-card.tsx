@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 type Repo = {
   name: string;
   description?: string;
@@ -14,9 +13,6 @@ export default function ProjectCard({ repo }: { repo: Repo }) {
     <article className="card p-5 reveal">
       <div className="flex items-center justify-between gap-3">
         <h3 className="font-semibold">{repo.name}</h3>
-        <Link href={repo.url} target="_blank" className="text-sm link">
-          View ↗
-        </Link>
       </div>
       {repo.description && (
         <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">

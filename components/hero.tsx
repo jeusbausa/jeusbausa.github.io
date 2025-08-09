@@ -38,7 +38,7 @@ export default function Hero() {
         )
         .from(".hero-cta", { y: 10, opacity: 0, duration: 0.35 }, "-=.2")
         .from(
-          ".hero-icons>*",
+          ".hero-icons",
           { y: 8, opacity: 0, duration: 0.3, stagger: 0.05 },
           "-=.2"
         );
@@ -66,7 +66,7 @@ export default function Hero() {
         </p>
         <p className="mt-2 font-semibold hero-meta">{hero.role}</p>
         <div className="mt-5 flex items-center gap-3 hero-cta">
-          <a className="btn btn-primary" href="#contact">
+          <a className="btn btn-primary" href="mailto:jeusdbausa@gmail.com">
             Get in Touch!
           </a>
         </div>
