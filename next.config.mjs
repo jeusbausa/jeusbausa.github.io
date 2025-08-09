@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const repo = "jeusbausa.github.io";
+const repo =
+  "https://raw.githubusercontent.com/jeusbausa/jeusbausa.github.io/refs/heads/gh-pages";
 const nextConfig = {
   reactStrictMode: false,
   images: {
@@ -13,7 +14,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: `/${repo}`,
-  assetPrefix: `/${repo}/`,
+  assetPrefix: `${repo}/`,
 };
 export default nextConfig;
