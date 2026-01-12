@@ -1,6 +1,5 @@
 "use client";
 import { experiences } from "../lib/data";
-import { ArrowRight } from "lucide-react";
 import useReveal from "./use-reveal";
 
 export default function Experience() {
@@ -12,15 +11,18 @@ export default function Experience() {
         {experiences.map((e, i) => (
           <div key={i} className="grid grid-cols-[80px,1fr] gap-6 items-start reveal">
             <div className="w-20 h-20 rounded-xl overflow-hidden border border-brand-700/30">
-              <img src={e.logo || '/logo.svg'} alt={e.company} className="w-full h-full object-cover" />
+              <img src={e.logo || "/logo.svg"} alt={e.company} className="w-full h-full object-cover" />
             </div>
             <div>
               <h3 className="text-brand-700 dark:text-brand-300 font-semibold">{e.role}</h3>
               <p className="font-bold">{e.company}</p>
               <p className="text-xs text-slate-500 dark:text-slate-400">{e.dates}</p>
-              <div className="mt-3 flex gap-2 text-brand-600 dark:text-brand-300">
-                <ArrowRight className="w-5 h-5" />
-                <p className="text-slate-700 dark:text-slate-300">{e.summary}</p>
+              <div className="my-6 flex flex-col gap-2  text-brand-600 dark:text-brand-300">
+                {e.summary.map((point, idx) => (
+                  <li key={idx} className="text-slate-700 dark:text-slate-300">
+                    {point}
+                  </li>
+                ))}
               </div>
             </div>
           </div>

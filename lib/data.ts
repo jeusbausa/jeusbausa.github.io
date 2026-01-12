@@ -21,16 +21,7 @@ export const techStack = [
   { title: "Backend", items: ["Node.js", "PHP"] },
   {
     title: "Frontend",
-    items: [
-      "React.js",
-      "TypeScript",
-      "JavaScript",
-      "Vue.js",
-      "Vuetify",
-      "TailwindCSS",
-      "jQuery",
-      "Bootstrap",
-    ],
+    items: ["React.js", "TypeScript", "JavaScript", "Vue.js", "Vuetify", "TailwindCSS", "jQuery", "Bootstrap"],
   },
   { title: "Databases", items: ["PostgreSQL", "MySQL", "MongoDB"] },
   {
@@ -51,33 +42,53 @@ export const techStack = [
 export const experiences = [
   {
     role: "Software Engineer",
+    company: "T Disney Trucking & Grading",
+    dates: "May 2025 – Dec 2025",
+    summary: [
+      "Built and maintained application features while contributing to the company's system migration to a modern technology stack.",
+    ],
+    logo: "/logos/t-disney.png",
+  },
+  {
+    role: "Mid-Level Software Engineer",
     company: "Business Tree PH",
     dates: "Jan 24, 2022 – Feb 07, 2025",
-    summary:
-      "Core development on paystage.net. Fixes, features, tests, and major improvements.",
+    summary: [
+      "One of SME’s key business products",
+      "Integrated multiple API payment gateway both local and international solutions and business solutions software development kits.",
+      "Led the small group of junior developers, conducted code reviews and maintained code quality structure.",
+    ],
     logo: "/logos/btph.png",
   },
   {
     role: "Software Developer",
     company: "Unnamed.gg",
     dates: "Nov 2022 – Feb 2023",
-    summary: "Web3 app enhancements, tests, and crypto payments integration.",
+    summary: [
+      "Developed coingate API for payment service.",
+      "Implemented feature enhancements, created test scripts.",
+      "Maintained code quality structure and conducted code review within the team.",
+    ],
     logo: "/logos/unnamed.jpeg",
   },
   {
     role: "Web Developer",
     company: "Goodlife Microlending Inc.",
     dates: "Sept 17, 2018 – Dec 30, 2021",
-    summary:
-      "Built multiple internal systems: Loan InfoSys v1/v2, HR InfoSys, Profiling Verification, GL Online Form.",
+    summary: [
+      "Developed multiple information systems for administrative office",
+      "Provided technical support within the department",
+    ],
     logo: "/logos/gl.png",
   },
   {
     role: "Graphic Designer",
     company: "LGU (Botolan, Zambales)",
     dates: "Apr 2018 – Sept 2018",
-    summary:
-      "Poster/banner assets, magazine design, and documentary video editing.",
+    summary: [
+      "Designed and conceptualized graphic assets for magazine, posters and banners.",
+      "Contributed in video editing and documentary productions",
+    ],
     logo: "/logos/lgu-botolan.png",
   },
 ];
@@ -103,8 +114,7 @@ export const repos = [
   },
   {
     name: "gmims-new",
-    description:
-      "Improved information system of Goodlife INC., Express, Vue, JWT auth, Sequelize ORM.",
+    description: "Improved information system of Goodlife INC., Express, Vue, JWT auth, Sequelize ORM.",
     language: "JavaScript",
     url: "https://github.com/jeusbausa/gmims-new",
     lastCommit: "Jun 25, 2025 12:05 pm",
