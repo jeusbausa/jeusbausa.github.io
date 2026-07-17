@@ -1,19 +1,23 @@
 "use client";
-import ThemeToggle from "./theme-toggle";
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import ThemeToggle from "./theme-toggle";
 
 const links = [
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Work Experience" },
+  { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#github", label: "GitHub" },
   { href: "#contact", label: "Contact" },
 ];
 
 export default function NavBar() {
   const ref = useRef<HTMLElement>(null);
+
   useEffect(() => {
     if (!ref.current) return;
+
     const ctx = gsap.context(() => {
       gsap.from(".nav-item", {
         y: -10,
@@ -24,30 +28,40 @@ export default function NavBar() {
         delay: 0.1,
       });
     }, ref);
+
     return () => ctx.revert();
   }, []);
 
   return (
     <header
       ref={ref}
-      className="sticky top-0 z-50 border-b border-slate-200/60 dark:border-slate-800/80 backdrop-blur bg-white/70 dark:bg-slate-950/50"
+      className="sticky top-0 z-50 border-b border-[rgb(var(--line))] bg-[rgb(var(--bg)/0.88)] backdrop-blur-xl"
     >
-      <div className="container-max flex items-center justify-between h-16">
-        <a href="#" className="font-semibold tracking-tight text-lg nav-item">
-          J<span className="text-brand-600">B</span>
+      <div className="container-max flex h-16 items-center justify-between gap-5">
+        <a
+          href="#"
+          className="nav-item font-mono-ui text-xs font-semibold uppercase tracking-[0.18em]"
+        >
+          Jeus Bausa
+          <span className="text-[rgb(var(--muted))]"> / JE</span>
         </a>
-        <nav className="hidden md:flex gap-6 text-sm">
-          {links.map((l) => (
+
+        <nav
+          aria-label="Primary navigation"
+          className="hidden items-center gap-5 md:flex"
+        >
+          {links.map((link) => (
             <a
-              key={l.href}
-              href={l.href}
-              className="hover:text-brand-700 dark:hover:text-brand-300 transition-colors text-slate-600 dark:text-slate-300 nav-item"
+              key={link.href}
+              href={link.href}
+              className="nav-item font-mono-ui text-[10px] uppercase tracking-[0.13em] text-[rgb(var(--muted))] transition-colors hover:text-[rgb(var(--fg))]"
             >
-              {l.label}
+              {link.label}
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2 nav-item">
+
+        <div className="nav-item flex items-center">
           <ThemeToggle />
         </div>
       </div>

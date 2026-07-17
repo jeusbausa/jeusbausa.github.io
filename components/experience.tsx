@@ -1,31 +1,55 @@
 "use client";
+
 import { experiences } from "../lib/data";
 import useReveal from "./use-reveal";
 
 export default function Experience() {
   const scope = useReveal();
+
   return (
-    <section ref={scope as any} id="experience" className="py-14 md:py-20">
-      <h2 className="text-4xl font-extrabold tracking-tight text-center reveal">Places I&apos;ve worked?</h2>
-      <div className="mt-10 grid gap-6 max-w-3xl mx-auto">
-        {experiences.map((e, i) => (
-          <div key={i} className="grid grid-cols-[80px,1fr] gap-6 items-start reveal">
-            <div className="w-20 h-20 rounded-xl overflow-hidden border border-brand-700/30">
-              <img src={e.logo || "/logo.svg"} alt={e.company} className="w-full h-full object-cover" />
+    <section ref={scope} id="experience" className="section-shell">
+      <div className="grid gap-8 md:grid-cols-[13rem_1fr] md:gap-16">
+        <div>
+          <p className="section-kicker reveal">02 — Experience</p>
+        </div>
+        <h2 className="section-heading reveal">Places I&apos;ve worked.</h2>
+      </div>
+
+      <div className="mt-12 border-b border-[rgb(var(--line))] md:ml-[17rem]">
+        {experiences.map((experience) => (
+          <article
+            key={`${experience.company}-${experience.role}`}
+            className="reveal grid gap-5 border-t border-[rgb(var(--line))] py-7 sm:grid-cols-[3.5rem_1fr_auto] sm:gap-6"
+          >
+            <div className="h-14 w-14 overflow-hidden border border-[rgb(var(--line))] bg-white p-1">
+              <img
+                src={experience.logo || "/logo.svg"}
+                alt=""
+                className="h-full w-full object-cover grayscale"
+              />
             </div>
-            <div>
-              <h3 className="text-brand-700 dark:text-brand-300 font-semibold">{e.role}</h3>
-              <p className="font-bold">{e.company}</p>
-              <p className="text-xs text-slate-500 dark:text-slate-400">{e.dates}</p>
-              <div className="my-6 flex flex-col gap-2  text-brand-600 dark:text-brand-300">
-                {e.summary.map((point, idx) => (
-                  <li key={idx} className="text-slate-700 dark:text-slate-300">
+            <div className="min-w-0">
+              <h3 className="text-lg font-semibold tracking-tight">
+                {experience.role}
+              </h3>
+              <p className="mt-1 text-sm text-[rgb(var(--muted))]">
+                {experience.company}
+              </p>
+              <ul className="mt-5 grid gap-2">
+                {experience.summary.map((point) => (
+                  <li
+                    key={point}
+                    className="flex gap-3 text-sm leading-6 text-[rgb(var(--muted))] before:mt-[0.65rem] before:h-px before:w-3 before:shrink-0 before:bg-[rgb(var(--fg))]"
+                  >
                     {point}
                   </li>
                 ))}
-              </div>
+              </ul>
             </div>
-          </div>
+            <p className="font-mono-ui text-[10px] uppercase tracking-[0.09em] text-[rgb(var(--muted))] sm:text-right">
+              {experience.dates}
+            </p>
+          </article>
         ))}
       </div>
     </section>

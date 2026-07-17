@@ -1,95 +1,114 @@
 "use client";
-import { isEmpty } from "lodash";
+
+import { useEffect, useState } from "react";
 import ProjectCard from "./project-card";
 import useReveal from "./use-reveal";
-import { useEffect, useState } from "react";
 
 type Repo = {
   name: string;
   description?: string;
   language?: string;
+  stars?: number;
   url: string;
-  lastCommit?: string;
+  updated_at?: string;
 };
+
+const PER_PAGE = 5;
 
 export default function Projects() {
   const scope = useReveal();
-
   const [repos, setRepos] = useState<Repo[]>([]);
   const [page, setPage] = useState(1);
-  const [perPage] = useState(5);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const ac = new AbortController();
+    const controller = new AbortController();
+
     async function load() {
+      setLoading(true);
       setError(null);
-      const qs = new URLSearchParams({
-        page: String(page),
-        per_page: String(perPage),
-      });
-      const res = await fetch(
-        `https://octokit-repos-jeusbausa.up.railway.app/repos?${qs}`,
-        {
-          signal: ac.signal,
+
+      try {
+        const query = new URLSearchParams({
+          page: String(page),
+          per_page: String(PER_PAGE),
+        });
+        const response = await fetch(
+          `https://octokit-repos-jeusbausa.up.railway.app/repos?${query}`,
+          { signal: controller.signal }
+        );
+
+        if (!response.ok) throw new Error("Repository request failed");
+        setRepos(await response.json());
+      } catch (requestError) {
+        if ((requestError as Error).name !== "AbortError") {
+          setError("Failed to load repositories :(");
+          setRepos([]);
         }
-      );
-      if (res.ok) {
-        const data: Repo[] = await res.json();
-        setRepos(data);
-        return;
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
       }
-
-      setError("Error loading repositories");
     }
-    load();
-    return () => ac.abort();
-  }, [page, perPage]);
 
-  const next = () => {
-    setPage((p) => p + 1);
-  };
-  const prev = () => setPage((p) => Math.max(1, p - 1));
+    load();
+    return () => controller.abort();
+  }, [page]);
 
   return (
-    <section ref={scope as any} id="projects" className="py-14 md:py-20">
-      <h2 className="text-4xl font-extrabold tracking-tight text-center reveal">
-        Some of my project contributions.
-      </h2>
+    <section ref={scope} id="projects" className="section-shell">
+      <div className="grid gap-8 md:grid-cols-[13rem_1fr] md:gap-16">
+        <div>
+          <p className="section-kicker reveal">03 — Projects</p>
+        </div>
+        <h2 className="section-heading reveal">
+          Some projects I&apos;ve worked on.
+        </h2>
+      </div>
 
       {error && (
-        <div className="mt-6 text-center font-mono text-xs text-red-600 dark:text-red-400">
-          Failed to load repositories :(
+        <div className="font-mono-ui mt-8 border border-red-500/40 p-4 text-xs text-red-700 dark:text-red-300 md:ml-[17rem]">
+          {error}
         </div>
       )}
 
-      <div className="mt-10 grid gap-4 max-w-2xl mx-auto">
-        {isEmpty(repos)
-          ? Array.from({ length: perPage }).map((_, i) => (
+      <div className="mt-12 border-b border-[rgb(var(--line))] md:ml-[17rem]">
+        {loading
+          ? Array.from({ length: PER_PAGE }).map((_, index) => (
               <div
-                key={i}
-                className="card p-5 animate-pulse bg-slate-100/70 dark:bg-slate-800/30"
+                key={index}
+                className="animate-pulse border-t border-[rgb(var(--line))] py-7"
               >
-                <div className="h-4 w-1/3 bg-slate-200 dark:bg-slate-700 rounded mb-3" />
-                <div className="flex gap-2 mb-2">
-                  <div className="h-3 w-16 bg-slate-200 dark:bg-slate-700 rounded" />
-                  <div className="h-3 w-32 bg-slate-200 dark:bg-slate-700 rounded" />
+                <div className="mb-3 h-4 w-1/3 bg-[rgb(var(--line))]" />
+                <div className="mb-2 flex gap-2">
+                  <div className="h-3 w-16 bg-[rgb(var(--line))]" />
+                  <div className="h-3 w-32 bg-[rgb(var(--line))]" />
                 </div>
-                <div className="h-3 w-3/4 bg-slate-200 dark:bg-slate-700 rounded" />
+                <div className="h-3 w-3/4 bg-[rgb(var(--line))]" />
               </div>
             ))
-          : repos.map((r) => <ProjectCard key={r.name} repo={r} />)}
+          : repos.map((repo) => <ProjectCard key={repo.name} repo={repo} />)}
       </div>
 
-      <div className="mt-6 flex items-center justify-center gap-3 reveal">
-        <button onClick={prev} disabled={page === 1} className="btn">
+      <div className="reveal mt-7 flex flex-wrap items-center gap-3 md:ml-[17rem]">
+        <button
+          type="button"
+          onClick={() => setPage((current) => Math.max(1, current - 1))}
+          disabled={page === 1 || loading}
+          className="btn"
+        >
           Previous
         </button>
-        <button onClick={next} className="btn btn-primary">
+        <button
+          type="button"
+          onClick={() => setPage((current) => current + 1)}
+          disabled={loading || repos.length < PER_PAGE}
+          className="btn btn-primary"
+        >
           Next
         </button>
-        <span className="text-xs text-slate-500 dark:text-slate-400 ml-2">
-          Page {page}
+        <span className="section-kicker ml-2">
+          Page {String(page).padStart(2, "0")}
         </span>
       </div>
     </section>

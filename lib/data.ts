@@ -10,7 +10,14 @@ export const hero = {
 
 export const about = {
   body: "A natural problem solver who approaches challenges with creativity, persistence, and self-motivation, I am confident that I can contribute and share my skills and knowledge and my unwavering determination to elevate the technology industry to new heights.",
-  stackTeaser: ["Laravel", "Next.js", "TypeScript", "Prisma", "TailwindCSS"],
+  stackTeaser: [
+    "Laravel",
+    "Next.js",
+    "React Native",
+    "TypeScript",
+    "Prisma",
+    "TailwindCSS",
+  ],
 };
 
 export const techStack = [
@@ -21,9 +28,20 @@ export const techStack = [
   { title: "Backend", items: ["Node.js", "PHP"] },
   {
     title: "Frontend",
-    items: ["React.js", "TypeScript", "JavaScript", "Vue.js", "Vuetify", "TailwindCSS", "jQuery", "Bootstrap"],
+    items: [
+      "React.js",
+      "React Native",
+      "TypeScript",
+      "JavaScript",
+      "Vue.js",
+      "Vuetify",
+      "TailwindCSS",
+      "jQuery",
+      "Bootstrap",
+    ],
   },
   { title: "Databases", items: ["PostgreSQL", "MySQL", "MongoDB"] },
+  { title: "AI", items: ["Claude Code", "Codex"] },
   {
     title: "Productivity Services",
     items: [
@@ -114,7 +132,8 @@ export const repos = [
   },
   {
     name: "gmims-new",
-    description: "Improved information system of Goodlife INC., Express, Vue, JWT auth, Sequelize ORM.",
+    description:
+      "Improved information system of Goodlife INC., Express, Vue, JWT auth, Sequelize ORM.",
     language: "JavaScript",
     url: "https://github.com/jeusbausa/gmims-new",
     lastCommit: "Jun 25, 2025 12:05 pm",

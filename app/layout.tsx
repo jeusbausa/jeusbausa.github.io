@@ -7,10 +7,11 @@ import Footer from "../components/footer";
 export const metadata: Metadata = {
   title: "Jeus D. Bausa — Software Engineer",
   description:
-    "Portfolio of Je — Software Engineer. Projects, experience, and contact.",
+    "Portfolio of Jeus Bausa — Software Engineer. Projects, experience, and contact.",
 };
+
 export const viewport: Viewport = {
-  themeColor: "#0ea5e9",
+  themeColor: "#f3f1eb",
 };
 
 export default function RootLayout({
@@ -20,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -28,7 +29,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavBar />
-          <main className="container-max py-10">{children}</main>
+          <main className="container-max">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

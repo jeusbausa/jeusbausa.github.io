@@ -2,10 +2,10 @@
 
 export default function Loading() {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white dark:bg-slate-950 z-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[rgb(var(--bg))]">
       <div className="flex flex-col items-center">
         <svg
-          className="animate-spin h-10 w-10 text-brand-600 dark:text-brand-400"
+          className="h-8 w-8 animate-spin text-[rgb(var(--fg))]"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -24,9 +24,7 @@ export default function Loading() {
             d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
           />
         </svg>
-        <p className="mt-3 text-sm text-brand-600 dark:text-brand-400 font-medium">
-          Loading...
-        </p>
+        <p className="section-kicker mt-3">Loading...</p>
       </div>
     </div>
   );

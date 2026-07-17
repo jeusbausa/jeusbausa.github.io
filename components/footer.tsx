@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200/60 dark:border-slate-800/80 mt-16">
-      <div className="container-max py-8 text-sm text-slate-600 dark:text-slate-400 flex flex-col md:flex-row items-center justify-between gap-3">
+    <footer className="border-t border-[rgb(var(--line))]">
+      <div className="container-max font-mono-ui flex flex-col gap-3 py-8 text-[10px] uppercase tracking-[0.12em] text-[rgb(var(--muted))] md:flex-row md:items-center md:justify-between">
         <p>© {new Date().getFullYear()} Jeus Bausa</p>
-        <p>Designed & built with ❤️</p>
+        <p>Designed &amp; built with care</p>
       </div>
     </footer>
   );

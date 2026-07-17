@@ -2,27 +2,184 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { --bg: 255 255 255; --fg: 17 24 39; --muted: 100 116 139; }
-.dark { --bg: 10 10 11; --fg: 226 232 240; --muted: 148 163 184; }
-
-html,body{height:100%}
-body{
-  background: rgb(var(--bg));
-  color: rgb(var(--fg));
-  font-family: theme('fontFamily.body');
-  min-height: 100%;
+:root {
+  --bg: 243 241 235;
+  --fg: 20 20 18;
+  --muted: 103 101 94;
+  --line: 203 200 190;
+  --surface: 249 248 244;
+  --accent: 211 255 71;
 }
 
-.container-max{ @apply max-w-6xl mx-auto px-4 md:px-6; }
-.card{ @apply rounded-2xl border border-slate-200/50 dark:border-slate-800/80 bg-white/60 dark:bg-slate-900/50 backdrop-blur shadow-soft; }
-.btn{ @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium ring-1 ring-slate-900/5 dark:ring-white/10 hover:opacity-90 transition; }
-.btn-primary{ @apply bg-brand-600 text-white hover:bg-brand-700; }
-.link{ @apply underline underline-offset-4 text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300; }
+.dark {
+  --bg: 18 18 16;
+  --fg: 238 236 228;
+  --muted: 158 156 147;
+  --line: 59 58 53;
+  --surface: 25 25 22;
+  --accent: 199 242 66;
+}
 
-.reveal { opacity: 1; transform: none; }
+html {
+  scroll-behavior: smooth;
+}
 
-.js .reveal { opacity: 0; transform: translateY(16px); }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: rgb(var(--bg));
+  background-image: radial-gradient(
+    rgb(var(--line) / 0.42) 0.7px,
+    transparent 0.7px
+  );
+  background-position: -11px -11px;
+  background-size: 22px 22px;
+  color: rgb(var(--fg));
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.container-max {
+  @apply mx-auto max-w-5xl px-5 md:px-8;
+}
+
+.font-mono-ui {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.section-shell {
+  @apply border-t py-16 md:py-24;
+  border-color: rgb(var(--line));
+}
+
+.section-heading {
+  @apply text-[clamp(2.25rem,6vw,4.75rem)] font-semibold leading-[0.95] tracking-[-0.055em];
+}
+
+.section-kicker {
+  @apply font-mono-ui text-[11px] uppercase tracking-[0.16em];
+  color: rgb(var(--muted));
+}
+
+.card {
+  border: 1px solid rgb(var(--line));
+  background: rgb(var(--surface));
+}
+
+.btn {
+  @apply font-mono-ui inline-flex min-h-10 items-center justify-center gap-2 border px-4 py-2 text-[11px] font-medium uppercase tracking-[0.12em] transition-colors;
+  border-color: rgb(var(--line));
+  background: rgb(var(--surface));
+}
+
+.btn:hover {
+  border-color: #141412;
+  background: rgb(var(--accent));
+  color: #141412;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.btn-primary {
+  border-color: rgb(var(--fg));
+  background: rgb(var(--fg));
+  color: rgb(var(--bg));
+}
+
+.link {
+  @apply underline decoration-1 underline-offset-4 transition-opacity hover:opacity-60;
+}
+
+.btn:focus-visible,
+.link:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgb(var(--fg));
+  outline-offset: 4px;
+}
+
+::selection {
+  background: rgb(var(--accent));
+  color: #141412;
+}
+
+.contribution-scroll {
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  scrollbar-color: rgb(var(--line)) transparent;
+  scrollbar-width: thin;
+}
+
+.contribution-grid {
+  display: grid;
+  min-width: 680px;
+  gap: clamp(3px, 0.45vw, 6px);
+}
+
+.contribution-week {
+  display: grid;
+  grid-template-rows: repeat(7, 12px);
+  gap: 3px;
+}
+
+.contribution-cell {
+  display: grid;
+  height: 12px;
+  place-items: center;
+  width: 100%;
+}
+
+.contribution-dot {
+  display: block;
+  border-radius: 9999px;
+  background: rgb(var(--fg));
+  transition: height 180ms ease, opacity 180ms ease, width 180ms ease;
+}
+
+.contribution-cell:hover .contribution-dot {
+  height: 12px !important;
+  opacity: 1 !important;
+  width: 12px !important;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .js .reveal { opacity: 1; transform: none; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

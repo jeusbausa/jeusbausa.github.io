@@ -1,14 +1,30 @@
 "use client";
+
 import useReveal from "./use-reveal";
+
 export default function Contact() {
   const scope = useReveal();
+
   return (
-    <section ref={scope as any} id="contact" className="py-14 md:py-24 text-center">
-      <h2 className="text-4xl font-extrabold tracking-tight reveal">Let&apos;s talk...</h2>
-      <p className="mt-4 max-w-2xl mx-auto text-slate-600 dark:text-slate-400 reveal">
-        Anything about coding, work-related stuff, movies, music, video editing, photo editing, online games,
-        feel free to message me on my social media accounts or send me an <a className="link" href="mailto:jeusbausa@gmail.com">email</a>.
-      </p>
+    <section ref={scope} id="contact" className="section-shell">
+      <p className="section-kicker reveal">05 — Contact</p>
+      <div className="mt-8 grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-end">
+        <h2 className="section-heading reveal">
+          Let&apos;s make something useful.
+        </h2>
+        <div className="reveal">
+          <p className="text-sm leading-7 text-[rgb(var(--muted))]">
+            Anything about coding, work, movies, music, video editing, photo
+            editing, or online games—feel free to message me or send an email.
+          </p>
+          <a
+            className="btn btn-primary mt-6"
+            href="mailto:jeusbausa@gmail.com"
+          >
+            jeusbausa@gmail.com ↗
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
