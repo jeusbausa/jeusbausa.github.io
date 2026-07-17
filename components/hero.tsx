@@ -11,9 +11,7 @@ export default function Hero() {
   useEffect(() => {
     if (!scope.current) return;
 
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const ctx = gsap.context(() => {
       if (prefersReduced) return;
 
@@ -34,19 +32,11 @@ export default function Hero() {
             stagger: 0.09,
             ease: "power3.out",
           },
-          "-=.1"
+          "-=.1",
         )
-        .from(
-          ".hero-meta",
-          { y: 14, opacity: 0, duration: 0.45, stagger: 0.08 },
-          "-=.2"
-        )
+        .from(".hero-meta", { y: 14, opacity: 0, duration: 0.45, stagger: 0.08 }, "-=.2")
         .from(".hero-cta", { y: 10, opacity: 0, duration: 0.35 }, "-=.2")
-        .from(
-          ".hero-icons",
-          { y: 8, opacity: 0, duration: 0.3, stagger: 0.05 },
-          "-=.2"
-        );
+        .from(".hero-icons", { y: 8, opacity: 0, duration: 0.3, stagger: 0.05 }, "-=.2");
     }, scope);
 
     return () => ctx.revert();
@@ -65,20 +55,14 @@ export default function Hero() {
 
         <h1 className="text-[clamp(4.25rem,11vw,8.7rem)] font-semibold leading-[0.76] tracking-[-0.075em]">
           <span className="hero-title-line block">JEUS</span>
-          <span className="hero-title-line ml-[0.35em] block italic">
-            BAUSA.
-          </span>
+          <span className="hero-title-line ml-[0.35em] block italic">BAUSA.</span>
         </h1>
 
         <div className="hero-meta mt-10 grid max-w-xl gap-3 border-l border-[rgb(var(--line))] pl-5 sm:grid-cols-[9rem_1fr]">
           <p className="section-kicker">About me</p>
           <div>
-            <p className="text-lg leading-snug">
-              {hero.role} building reliable, useful products for the web.
-            </p>
-            <p className="mt-2 text-sm text-[rgb(var(--muted))]">
-              {hero.aboutShort}
-            </p>
+            <p className="text-lg leading-snug">{hero.role} building reliable, useful products for the web.</p>
+            <p className="mt-2 text-sm text-[rgb(var(--muted))]">{hero.aboutShort}</p>
           </div>
         </div>
 
@@ -114,13 +98,10 @@ export default function Hero() {
       </div>
 
       <div className="hero-meta relative mx-auto w-full max-w-[22rem] md:mr-0">
-        <div
-          className="absolute -left-5 -top-5 h-full w-full border border-[rgb(var(--line))]"
-          aria-hidden="true"
-        />
+        <div className="absolute -left-5 -top-5 h-full w-full border border-[rgb(var(--line))]" aria-hidden="true" />
         <div className="relative aspect-[4/5] overflow-hidden border border-[rgb(var(--fg))] bg-[rgb(var(--surface))] p-3">
           <img
-            src="https://avatars.githubusercontent.com/u/47097646"
+            src="/images/profile.png"
             alt="Portrait of Jeus Bausa"
             className="h-full w-full object-cover grayscale contrast-125"
           />

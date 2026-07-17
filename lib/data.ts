@@ -10,14 +10,7 @@ export const hero = {
 
 export const about = {
   body: "A natural problem solver who approaches challenges with creativity, persistence, and self-motivation, I am confident that I can contribute and share my skills and knowledge and my unwavering determination to elevate the technology industry to new heights.",
-  stackTeaser: [
-    "Laravel",
-    "Next.js",
-    "React Native",
-    "TypeScript",
-    "Prisma",
-    "TailwindCSS",
-  ],
+  stackTeaser: ["Laravel", "Next.js", "React Native", "TypeScript", "Prisma", "TailwindCSS"],
 };
 
 export const techStack = [
@@ -65,7 +58,7 @@ export const experiences = [
     summary: [
       "Built and maintained application features while contributing to the company's system migration to a modern technology stack.",
     ],
-    logo: "/logos/t-disney.png",
+    logo: "/images/t-disney.png",
   },
   {
     role: "Mid-Level Software Engineer",
@@ -76,7 +69,7 @@ export const experiences = [
       "Integrated multiple API payment gateway both local and international solutions and business solutions software development kits.",
       "Led the small group of junior developers, conducted code reviews and maintained code quality structure.",
     ],
-    logo: "/logos/btph.png",
+    logo: "/images/btph.png",
   },
   {
     role: "Software Developer",
@@ -87,7 +80,7 @@ export const experiences = [
       "Implemented feature enhancements, created test scripts.",
       "Maintained code quality structure and conducted code review within the team.",
     ],
-    logo: "/logos/unnamed.jpeg",
+    logo: "/images/unnamed.jpeg",
   },
   {
     role: "Web Developer",
@@ -97,7 +90,7 @@ export const experiences = [
       "Developed multiple information systems for administrative office",
       "Provided technical support within the department",
     ],
-    logo: "/logos/gl.png",
+    logo: "/images/gl.png",
   },
   {
     role: "Graphic Designer",
@@ -107,7 +100,7 @@ export const experiences = [
       "Designed and conceptualized graphic assets for magazine, posters and banners.",
       "Contributed in video editing and documentary productions",
     ],
-    logo: "/logos/lgu-botolan.png",
+    logo: "/images/lgu-botolan.png",
   },
 ];
 
@@ -132,8 +125,7 @@ export const repos = [
   },
   {
     name: "gmims-new",
-    description:
-      "Improved information system of Goodlife INC., Express, Vue, JWT auth, Sequelize ORM.",
+    description: "Improved information system of Goodlife INC., Express, Vue, JWT auth, Sequelize ORM.",
     language: "JavaScript",
     url: "https://github.com/jeusbausa/gmims-new",
     lastCommit: "Jun 25, 2025 12:05 pm",
