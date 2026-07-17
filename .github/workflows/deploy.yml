@@ -1,7 +1,8 @@
 name: Deploy Next.js to GitHub Pages
 on:
   push:
-    branches: [main]
+    branches: [master]
+  workflow_dispatch:
 permissions:
   contents: read
   pages: write
@@ -19,7 +20,6 @@ jobs:
         with: { node-version: 20 }
       - run: npm ci
       - run: npm run build
-      - run: npx next export
       - uses: actions/upload-pages-artifact@v3
         with: { path: ./out }
 

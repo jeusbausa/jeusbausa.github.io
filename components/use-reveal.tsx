@@ -5,8 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function useReveal(
-  selector = ".reveal",
-  options: gsap.TweenVars = {}
+  selector = ".reveal"
 ) {
   const scope = useRef<HTMLElement | null>(null);
   useEffect(() => {
@@ -27,7 +26,6 @@ export default function useReveal(
             ease: "power3.out",
             delay: i * 0.05,
             scrollTrigger: { trigger: el, start: "top 85%" },
-            ...options,
           }
         );
       });
