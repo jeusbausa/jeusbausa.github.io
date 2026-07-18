@@ -2,7 +2,7 @@ export const hero = {
   aboutShort: 'Or you can call me "Je". That works too...',
   role: "Software Engineer",
   contacts: {
-    email: "jeusbausa@gmail.com",
+    email: "jeusdbausa@gmail.com",
     github: "https://github.com/jeusbausa",
     linkedin: "https://www.linkedin.com/in/jeus-bausa/",
   },
