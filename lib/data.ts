@@ -4,7 +4,7 @@ export const hero = {
   contacts: {
     email: "jeusdbausa@gmail.com",
     github: "https://github.com/jeusbausa",
-    linkedin: "https://www.linkedin.com/in/jeus-bausa/",
+    linkedin: "https://www.linkedin.com/in/jeusbausa/",
   },
 };
 
