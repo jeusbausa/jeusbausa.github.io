@@ -52,6 +52,17 @@ export const techStack = [
 
 export const experiences = [
   {
+    role: "Software Engineer (MIS / Internal Systems)",
+    company: "Goodlife Microlending Incorporated",
+    dates: ["Jan 2026 – Present", "2018 – 2021"],
+    summary: [
+      "Rejoined the company after prior tenure as Web Developer (2018–2021).",
+      "Developing a mobile loan application and enhancing the company's information systems.",
+      "Previously developed administrative systems and provided technical support.",
+    ],
+    logo: "/images/gl.png",
+  },
+  {
     role: "Software Engineer",
     company: "T Disney Trucking & Grading",
     dates: "May 2025 – Dec 2025",
@@ -83,16 +94,6 @@ export const experiences = [
     logo: "/images/unnamed.jpeg",
   },
   {
-    role: "Web Developer",
-    company: "Goodlife Microlending Inc.",
-    dates: "Sept 17, 2018 – Dec 30, 2021",
-    summary: [
-      "Developed multiple information systems for administrative office",
-      "Provided technical support within the department",
-    ],
-    logo: "/images/gl.png",
-  },
-  {
     role: "Graphic Designer",
     company: "LGU (Botolan, Zambales)",
     dates: "Apr 2018 – Sept 2018",
@@ -101,6 +102,64 @@ export const experiences = [
       "Contributed in video editing and documentary productions",
     ],
     logo: "/images/lgu-botolan.png",
+  },
+];
+
+export const projectContributions = [
+  {
+    name: "Goodlife Microlending",
+    category: "Landing Page",
+    description: "The public-facing website for Goodlife Microlending and its lending services.",
+    url: "https://goodlifemicrolending.com",
+  },
+  {
+    name: "Goodlife Client Portal",
+    category: "Web Portal",
+    description: "A secure customer portal for accessing Goodlife accounts and loan services online.",
+    url: "https://portal.goodlifemicrolending.com",
+  },
+  {
+    name: "My Goodlife",
+    category: "Mobile App",
+    description: "A mobile loan application that gives customers access to Goodlife lending services.",
+    url: "https://play.google.com/store/apps/details?id=com.goodlifeapps.mygoodlife",
+  },
+  {
+    name: "PayStage",
+    category: "Payment Platform",
+    description:
+      "A global payment platform supporting bank transfers, e-wallets, cards, and alternative payment methods.",
+    url: "https://paystage.net",
+  },
+  {
+    name: "JPay / Oriental Wallet",
+    category: "Digital Wallet",
+    description: "A secure digital wallet and online payment experience for customer transactions.",
+    url: "https://orientalwallet.com",
+  },
+  {
+    name: "Cloutchain",
+    category: "Web3 Platform",
+    description: "A Web3 loyalty platform helping brands identify and engage their most active fans.",
+    url: "https://cloutchain.io",
+  },
+  {
+    name: "JVoucher",
+    category: "Voucher Platform",
+    description: "A digital voucher product for issuing and managing online value.",
+    url: "https://jvoucher.ypay.net",
+  },
+  {
+    name: "Crescente",
+    category: "Fintech Platform",
+    description: "A secure account platform built around authenticated financial services.",
+    url: "https://secure.crescente.net",
+  },
+  {
+    name: "Milewise",
+    category: "Logistics Platform",
+    description: "A mileage-tracking product designed to automate trip records and simplify reporting.",
+    url: "https://milewise.ai/login",
   },
 ];
 

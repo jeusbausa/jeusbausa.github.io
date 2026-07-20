@@ -27,9 +27,14 @@ export default function ProjectCard({ repo }: { repo: Repo }) {
           {typeof repo.stars === "number" && <span>★ {repo.stars}</span>}
           {repo.updated_at && (
             <span>
-              {new Date(repo.updated_at).toLocaleDateString("en", {
+              Updated {new Date(repo.updated_at).toLocaleString("en-US", {
                 month: "short",
+                day: "numeric",
                 year: "numeric",
+                hour: "numeric",
+                minute: "2-digit",
+                hour12: true,
+                timeZone: "Asia/Manila",
               })}
             </span>
           )}

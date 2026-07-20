@@ -149,6 +149,17 @@ button:focus-visible {
   width: 12px !important;
 }
 
+@media (min-width: 1024px) {
+  .contribution-scroll {
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .contribution-grid {
+    min-width: 0;
+  }
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;

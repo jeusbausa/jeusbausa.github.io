@@ -46,9 +46,14 @@ export default function Experience() {
                 ))}
               </ul>
             </div>
-            <p className="font-mono-ui text-[10px] uppercase tracking-[0.09em] text-[rgb(var(--muted))] sm:text-right">
-              {experience.dates}
-            </p>
+            <div className="grid gap-2 font-mono-ui text-[10px] uppercase tracking-[0.09em] text-[rgb(var(--muted))] sm:text-right">
+              {(Array.isArray(experience.dates)
+                ? experience.dates
+                : [experience.dates]
+              ).map((dates) => (
+                <p key={dates}>{dates}</p>
+              ))}
+            </div>
           </article>
         ))}
       </div>
