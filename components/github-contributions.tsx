@@ -68,9 +68,12 @@ export default function GithubContributions({ data }: { data: GithubContribution
           page: String(page),
           per_page: String(REPOS_PER_PAGE),
         });
-        const response = await fetch(`https://octokit-repos-jeusbausa.up.railway.app/repos?${query}`, {
-          signal: controller.signal,
-        });
+        const response = await fetch(
+          `https://gmims-platform-githuboctokit-0allfn-50cecb-47-129-50-207.sslip.io/repos?${query}`,
+          {
+            signal: controller.signal,
+          },
+        );
 
         if (!response.ok) throw new Error("Repository request failed");
         setRepos(await response.json());
