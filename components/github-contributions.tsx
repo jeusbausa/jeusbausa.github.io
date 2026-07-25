@@ -69,7 +69,7 @@ export default function GithubContributions({ data }: { data: GithubContribution
           per_page: String(REPOS_PER_PAGE),
         });
         const response = await fetch(
-          `https://gmims-platform-githuboctokit-0allfn-50cecb-47-129-50-207.sslip.io/repos?${query}`,
+          `https://gmims-platform-githuboctokit-0allfn-10b929-54-179-253-94.sslip.io/repos?${query}`,
           {
             signal: controller.signal,
           },
