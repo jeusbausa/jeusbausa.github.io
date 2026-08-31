@@ -1,5 +1,4 @@
 export const hero = {
-  aboutShort: 'Or you can call me "Je". That works too...',
   role: "Software Engineer",
   contacts: {
     email: "jeusdbausa@gmail.com",
@@ -10,7 +9,7 @@ export const hero = {
 
 export const about = {
   body: "A natural problem solver who approaches challenges with creativity, persistence, and self-motivation, I am confident that I can contribute and share my skills and knowledge and my unwavering determination to elevate the technology industry to new heights.",
-  stackTeaser: ["Laravel", "Next.js", "React Native", "TypeScript", "Prisma", "TailwindCSS"],
+  stackTeaser: ["Next.js", "React Native", "Laravel", "TypeScript", "Prisma", "TailwindCSS"],
 };
 
 export const techStack = [

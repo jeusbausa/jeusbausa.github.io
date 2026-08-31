@@ -12,8 +12,7 @@ export default function Contact() {
         <h2 className="section-heading reveal">Let&apos;s make something useful.</h2>
         <div className="reveal">
           <p className="text-sm leading-7 text-[rgb(var(--muted))]">
-            Anything about coding, work, movies, music, video editing, photo editing, or online games—feel free to
-            message me or send an email.
+            Looking to collaborate, discuss a project, or explore new opportunities? Reach out—I’d love to connect.
           </p>
           <a className="btn btn-primary mt-6" href="mailto:jeusdbausa@gmail.com">
             jeusdbausa@gmail.com ↗
