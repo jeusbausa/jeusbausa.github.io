@@ -62,7 +62,6 @@ export default function Hero() {
           <p className="section-kicker">About me</p>
           <div>
             <p className="text-lg leading-snug">{hero.role} building reliable, useful products for the web.</p>
-            <p className="mt-2 text-sm text-[rgb(var(--muted))]">{hero.aboutShort}</p>
           </div>
         </div>
 
