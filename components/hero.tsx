@@ -1,71 +1,30 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import { ArrowDownRight, Github, Linkedin, Mail } from "lucide-react";
 import { hero } from "../lib/data";
 
 export default function Hero() {
-  const scope = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!scope.current) return;
-
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const ctx = gsap.context(() => {
-      if (prefersReduced) return;
-
-      const timeline = gsap.timeline();
-      timeline
-        .from(".hero-greet", {
-          y: 10,
-          opacity: 0,
-          duration: 0.4,
-          ease: "power2.out",
-        })
-        .from(
-          ".hero-title-line",
-          {
-            y: 24,
-            opacity: 0,
-            duration: 0.55,
-            stagger: 0.09,
-            ease: "power3.out",
-          },
-          "-=.1",
-        )
-        .from(".hero-meta", { y: 14, opacity: 0, duration: 0.45, stagger: 0.08 }, "-=.2")
-        .from(".hero-cta", { y: 10, opacity: 0, duration: 0.35 }, "-=.2")
-        .from(".hero-icons", { y: 8, opacity: 0, duration: 0.3, stagger: 0.05 }, "-=.2");
-    }, scope);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section
-      ref={scope}
-      className="grid min-h-[calc(100svh-4rem)] items-center gap-14 py-16 md:grid-cols-[1.3fr_0.7fr] md:py-24"
+      className="hero grid min-h-[calc(100svh-4rem)] items-center gap-14 py-16 md:grid-cols-[1.3fr_0.7fr] md:py-24"
     >
       <div>
-        <p className="hero-greet section-kicker mb-7 flex items-center gap-3">
+        <p className="section-kicker mb-7 flex items-center gap-3">
           <span className="inline-block h-2 w-2 rounded-full bg-[rgb(var(--accent))] ring-1 ring-[rgb(var(--fg))]" />
           Software engineer / Philippines
         </p>
 
         <h1 className="text-[clamp(4.25rem,11vw,8.7rem)] font-semibold leading-[0.76] tracking-[-0.075em]">
-          <span className="hero-title-line block">JEUS</span>
-          <span className="hero-title-line ml-[0.35em] block italic">BAUSA.</span>
+          <span className="block">JEUS</span>
+          <span className="ml-[0.35em] block italic">BAUSA.</span>
         </h1>
 
-        <div className="hero-meta mt-10 grid max-w-xl gap-3 border-l border-[rgb(var(--line))] pl-5 sm:grid-cols-[9rem_1fr]">
+        <div className="mt-10 grid max-w-xl gap-3 border-l border-[rgb(var(--line))] pl-5 sm:grid-cols-[9rem_1fr]">
           <p className="section-kicker">About me</p>
           <div>
             <p className="text-lg leading-snug">{hero.role} building reliable, useful products for the web.</p>
           </div>
         </div>
 
-        <div className="hero-cta mt-8 flex flex-wrap items-center gap-3">
+        <div className="mt-8 flex flex-wrap items-center gap-3">
           <a className="btn btn-primary" href={`mailto:${hero.contacts.email}`}>
             Get in touch <Mail size={14} />
           </a>
@@ -74,7 +33,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="hero-icons mt-7 flex items-center gap-5 text-[rgb(var(--muted))]">
+        <div className="mt-7 flex items-center gap-5 text-[rgb(var(--muted))]">
           <a
             href={hero.contacts.github}
             target="_blank"
@@ -96,7 +55,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero-meta relative mx-auto w-full max-w-[22rem] md:mr-0">
+      <div className="relative mx-auto w-full max-w-[22rem] md:mr-0">
         <div className="absolute -left-5 -top-5 h-full w-full border border-[rgb(var(--line))]" aria-hidden="true" />
         <div className="relative aspect-[4/5] overflow-hidden border border-[rgb(var(--fg))] bg-[rgb(var(--surface))] p-3">
           <img

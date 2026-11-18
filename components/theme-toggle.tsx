@@ -82,7 +82,8 @@ export default function ThemeToggle() {
       onClick={(event) => toggleTheme(event.currentTarget)}
     >
       <span className="transition-transform duration-500 group-hover:rotate-12">
-        {!mounted || current !== "dark" ? <Sun size={16} /> : <Moon size={16} />}
+        <Sun aria-hidden="true" size={16} className="dark:hidden" />
+        <Moon aria-hidden="true" size={16} className="hidden dark:block" />
       </span>
     </button>
   );

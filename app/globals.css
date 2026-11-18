@@ -174,23 +174,32 @@ button:focus-visible {
   z-index: 9999;
 }
 
-.reveal {
-  opacity: 1;
-  transform: none;
+@keyframes hero-enter {
+  from { transform: translateY(8px); }
+  to { transform: translateY(0); }
 }
 
-.js .reveal {
-  opacity: 0;
-  transform: translateY(16px);
+@keyframes section-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero > div {
+    animation: hero-enter 400ms ease-out;
+  }
+
+  .reveal[data-reveal] {
+    animation: section-enter 600ms ease-out backwards;
+  }
+
+  .reveal[data-reveal="pending"] {
+    animation-play-state: paused;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .js .reveal {
-    opacity: 1;
-    transform: none;
   }
 }
