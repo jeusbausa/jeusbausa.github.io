@@ -31,16 +31,15 @@ body {
 
 body {
   min-height: 100%;
+  isolation: isolate;
   background-color: rgb(var(--bg));
-  background-image: radial-gradient(
-    rgb(var(--line) / 0.42) 0.7px,
-    transparent 0.7px
-  );
-  background-position: -11px -11px;
-  background-size: 22px 22px;
   color: rgb(var(--fg));
   font-family: Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+.page-backdrop {
+  background-image: radial-gradient(circle, rgb(var(--muted) / 0.3) 1px, transparent 1.5px);
 }
 
 .container-max {

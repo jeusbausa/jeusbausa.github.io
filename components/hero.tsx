@@ -1,5 +1,6 @@
 import { ArrowDownRight, Github, Linkedin, Mail } from "lucide-react";
 import { hero } from "../lib/data";
+import HeroPortrait from "./hero-portrait";
 
 export default function Hero() {
   return (
@@ -58,11 +59,7 @@ export default function Hero() {
       <div className="relative mx-auto w-full max-w-[22rem] md:mr-0">
         <div className="absolute -left-5 -top-5 h-full w-full border border-[rgb(var(--line))]" aria-hidden="true" />
         <div className="relative aspect-[4/5] overflow-hidden border border-[rgb(var(--fg))] bg-[rgb(var(--surface))] p-3">
-          <img
-            src="/images/profile.png"
-            alt="Portrait of Jeus Bausa"
-            className="h-full w-full object-cover grayscale contrast-125"
-          />
+          <HeroPortrait />
           <div
             className="pointer-events-none absolute inset-3 bg-[radial-gradient(circle,transparent_45%,rgb(var(--bg)/0.12)_46%)] bg-[length:4px_4px] mix-blend-multiply dark:mix-blend-screen"
             aria-hidden="true"

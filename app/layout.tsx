@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
+import PageBackdrop from "../components/page-backdrop";
 
 export const metadata: Metadata = {
   manifest: "/site.webmanifest",
@@ -37,6 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <PageBackdrop />
           <NavBar />
           <main className="container-max">{children}</main>
           <Footer />
