@@ -19,6 +19,7 @@ type Repo = {
   stars?: number;
   url: string;
   updated_at?: string;
+  archived?: boolean;
 };
 
 function toDateKey(date: Date) {
@@ -69,14 +70,19 @@ export default function GithubContributions({ data }: { data: GithubContribution
           per_page: String(REPOS_PER_PAGE),
         });
         const response = await fetch(
-          `https://gmims-platform-githuboctokit-0allfn-10b929-54-179-253-94.sslip.io/repos?${query}`,
+          `https://gmims-github-octokit-api-wzb9ws-1377b9-13-228-153-150.sslip.io/repos?${query}`,
           {
             signal: controller.signal,
           },
         );
 
         if (!response.ok) throw new Error("Repository request failed");
-        setRepos(await response.json());
+
+        const repos = await response.json();
+
+        const nonArchivedRepos = repos.filter((repo: Repo) => !repo.archived);
+
+        setRepos(nonArchivedRepos);
       } catch (requestError) {
         if ((requestError as Error).name !== "AbortError") {
           setError("GitHub repositories are temporarily unavailable.");
@@ -170,7 +176,7 @@ export default function GithubContributions({ data }: { data: GithubContribution
 
         <div className="mt-16">
           <div className="reveal flex items-center justify-between gap-4 border-b border-[rgb(var(--line))] pb-4">
-            <p className="section-kicker">Repositories</p>
+            <p className="section-kicker">Repositories (Active)</p>
             <span className="section-kicker">Page {String(page).padStart(2, "0")}</span>
           </div>
 
